@@ -1,0 +1,651 @@
+<div style="background-color: #efefef">
+  <p
+    class="kl_module_progress_completion"
+    style="display: none; background-color: #a31f34; color: #ffffff"
+  >
+    Module Item Completion (built in browser, hidden in app)
+  </p>
+</div>
+<div style="background-color: #efefef; padding-top: 3px">
+  <h2>
+    <span style="color: #a31f34; padding-left: 6px"
+      ><strong
+        ><img
+          id="3663862"
+          role="presentation"
+          src="https://classroom.emeritus.org/courses/5388/files/2483060/preview"
+          alt=""
+          width="50"
+          height="50"
+          data-api-endpoint="https://classroom.emeritus.org/api/v1/courses/5388/files/2483060"
+          data-api-returntype="File"
+        /><span> Learning Outcome Addressed</span></strong
+      ></span
+    >
+  </h2>
+  <ol start="4" type="1">
+    <li><span>Apply Postman to test API endpoints.</span></li>
+  </ol>
+</div>
+<h3>
+  <span style="color: #a31f34"><strong>Introduction</strong></span>
+</h3>
+<p>
+  In this activity, you will be using the Todo API to perform CRUD operations
+  using Postman. Go through the
+  <a
+    class="inline_disabled"
+    href="https://github.com/ndraaditiya/public-api-crud-todoApp"
+    target="_blank"
+    rel="noopener"
+    >Todo API documentation</a
+  >
+  to better understand the API.
+</p>
+<p>
+  The idea for this activity is to interact with the Todo API to perform CRUD
+  operations on the data. You will fetch Todos from their server, add a Todo
+  entry, and update, fetch, and delete that Todo using its ID. Note that this
+  API has a rate limit of five requests per minute for
+  <span style="font-family: 'courier new', courier"
+    >POST,<span
+      style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    >
+    </span
+    >PUT</span
+  >, and
+  <span style="font-family: 'courier new', courier">DELETE</span> requests and a
+  rate of two requests per second for
+  <span style="font-family: 'courier new', courier">GET</span> requests.
+</p>
+<h3>
+  <span style="color: #a31f34"
+    ><strong>Understanding how to use the API</strong></span
+  >
+</h3>
+<p><em>Select each header to learn more.</em></p>
+<div class="kl_panels_wrapper kl_panels_accordion">
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong>Sending a GET Request to the API</strong></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      To use a GET request to fetch all the Todos, you need to use the URL
+      <span style="font-family: 'courier new', courier"
+        >https://calm-plum-jaguar-tutu.cyclic.app/todos</span
+      >
+      in the request body in Postman.
+    </p>
+    <p>
+      If you send a GET request, you will get a response similar to the one
+      below:
+    </p>
+    <p>
+      <code><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": [</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; &nbsp; &nbsp; {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "_id":
+          "65f6f822d3c1aa78692518d7",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "todoName": "bang",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "isComplete": false,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-17T14:03:08.692Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-17T14:03:08.692Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; },</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; &nbsp; &nbsp; {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "_id":
+          "65f6f89dd3c1aa78692518db",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "todoName": "bang",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "isComplete": true,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-17T14:03:08.692Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-17T14:03:08.692Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; },</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; ...</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; ]</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"><strong>GET a Todo by ID</strong></span>
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      To fetch a Todo item by using its ID, you must append the ID, typically an
+      alphanumeric sequence such as
+      <span style="font-family: 'courier new', courier"
+        >65f97aab62da1655623599a4</span
+      >
+      at the end of the Todo URL, as follows:
+    </p>
+    <p>
+      <span style="font-family: 'courier new', courier"
+        >https://calm-plum-jaguar-tutu.cyclic.app/todos/65f97aab62da1655623599a4&nbsp;</span
+      >
+    </p>
+    <p>
+      Use this URL in the request body of a GET request to get the corresponding
+      todo item from the API:
+    </p>
+    <p>
+      <code><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "_id": "65f82b9acf30d4fe96e43338",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "todoName": "Harry Potter and the Order
+          of the Phoenix (Harry Potter, #5)",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "isComplete": true,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-18T11:54:55.412Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-18T11:54:55.412Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; }</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong>Sending a POST Request to the Todo API</strong></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      To add a Todo item to the API, you must send a POST request with the Todo
+      data, such as Todo text, its status, and whether it is complete. The
+      request is sent as JSON data where the
+      <span style="font-family: 'courier new', courier">todoName</span> key will
+      hold the Todo text that describes the Todo, and the
+      <span style="font-family: 'courier new', courier">isComplete</span> key
+      tells you whether the Todo is completed or not.
+    </p>
+    <p>
+      To send a POST request using Postman, you must add the Todo as JSON to the
+      request body, as seen in the following screenshot:
+    </p>
+    <p>
+      <img
+        id="2448365"
+        src="https://classroom.emeritus.org/courses/5388/files/2448365/preview"
+        alt="Sending a POST request to the Todo API"
+        width="1000"
+        height="283"
+        data-api-endpoint="https://classroom.emeritus.org/api/v1/courses/5388/files/2448365"
+        data-api-returntype="File"
+      />
+    </p>
+    <p>
+      If you send a POST request with the Todo item inside your JSON code, you
+      will get the following response:
+    </p>
+    <p>
+      <code><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "todoName": "DC Films Marathon",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "isComplete": false,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-19T11:24:11.237Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-19T11:24:11.238Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "_id": "65f97aab62da1655623599a4",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; }</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong>Sending a PUT Request to the API</strong></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      To update a Todo item by using its ID, you must append the ID, typically
+      an alphanumeric sequence such as
+      <span style="font-family: 'courier new', courier"
+        >65f97aab62da1655623599a4</span
+      >
+      at the end of the Todo URL, as follows:
+    </p>
+    <p>
+      <span style="font-family: 'courier new', courier"
+        >https://calm-plum-jaguar-tutu.cyclic.app/todos/65f97aab62da1655623599a4&nbsp;</span
+      >
+    </p>
+    <p>
+      Use this URL in the request body of a PUT request as shown in the
+      screenshot below:
+    </p>
+    <p>
+      <img
+        id="2448366"
+        src="https://classroom.emeritus.org/courses/5388/files/2448366/preview"
+        alt="Sending a PUT request to the Todo API"
+        width="1000"
+        height="313"
+        data-api-endpoint="https://classroom.emeritus.org/api/v1/courses/5388/files/2448366"
+        data-api-returntype="File"
+      />
+    </p>
+    <p>
+      Note that you can only update the todo if the
+      <span style="font-family: 'courier new', courier">isComplete</span> status
+      is equal to True. Upon sending a successful PUT request, you will a
+      response similar to the one below:
+    </p>
+    <p>
+      <code><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "_id": "65f97aab62da1655623599a4",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "todoName": "DC Films Marathon",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "isComplete": true,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-19T11:24:11.237Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-19T11:48:19.592Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; }</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong>Sending a DELETE Request to the API</strong></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      To delete a Todo from the API, you must append the ID, typically an
+      alphanumeric sequence such as
+      <span style="font-family: 'courier new', courier"
+        >65f97aab62da1655623599a4</span
+      >
+      at the end of the Todo URL, as follows:
+    </p>
+    <p>
+      <span style="font-family: 'courier new', courier"
+        >https://calm-plum-jaguar-tutu.cyclic.app/todos/65f97aab62da1655623599a4</span
+      >
+    </p>
+    <p>
+      Use this URL in the request body of a DELETE request as shown in the
+      screenshot below:
+    </p>
+    <p>
+      <img
+        id="2448367"
+        src="https://classroom.emeritus.org/courses/5388/files/2448367/preview"
+        alt="Sending a DELETE request to the Todo API"
+        width="1000"
+        height="303"
+        data-api-endpoint="https://classroom.emeritus.org/api/v1/courses/5388/files/2448367"
+        data-api-returntype="File"
+      />
+    </p>
+    <p>
+      Upon sending a successful DELETE request, you will get a response similar
+      to the one below:
+    </p>
+    <p>
+      <code><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; "message": "Successfully deleted todo!"</span
+        ></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+</div>
+<h3>
+  <span style="color: #a31f34"><strong>Instructions</strong></span>
+</h3>
+<p>Now it's your turn to interact with the API.</p>
+<div class="kl_panels_wrapper kl_panels_accordion">
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"><strong>Step 1: Add a New Todo</strong></span>
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      Using Postman, add a new Todo: &ldquo;Buy Chocolates&rdquo; with the
+      status isComplete: false to the API using a POST request. Save the ID that
+      the API returns in the response, as you will need it later. The response
+      you obtain should be similar to the one below:<br /><code
+        ><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "todoName": "Buy Chocolates",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "isComplete": false,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-19T12:17:42.117Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-19T12:17:42.117Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "_id": "65f98268114a4682aac7384f",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; }</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong
+        >Step 2: Perform a GET Request to Retrieve the Todo Item</strong
+      ></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      As demonstrated above, use the Todo ID you saved in step 1 to perform a
+      GET request to retrieve the Todo item. The response you obtain should be
+      similar to the one below:<br /><code
+        ><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "_id": "65f98268114a4682aac7384f",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "todoName": "Buy Chocolates",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "isComplete": false,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-19T12:17:42.117Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-19T12:17:42.117Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; }</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong>Step 3: Use a PUT Request to Update the Status</strong></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      Consider the Todo item with the ID you saved in step 1, and update the
+      status to
+      <span style="font-family: 'courier new', courier">isComplete: true</span>
+      using a PUT request. The response you obtain should be similar to the one
+      below:<br /><code><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "data": {</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "_id": "65f98268114a4682aac7384f",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "todoName": "Buy Chocolates",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "isComplete": true,</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "createdAt":
+          "2024-03-19T12:17:42.117Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "updatedAt":
+          "2024-03-19T12:18:46.233Z",</span
+        ></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; &nbsp; &nbsp; "__v": 0</span
+        ></code
+      ><br /><code><span style="color: #000000">&nbsp; &nbsp; }</span></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+  <h3
+    id="kl_panel_10"
+    class="kl_panel_heading kl_panel_10"
+    style="background-color: #a31f34; color: #fff"
+  >
+    <span style="color: #ffffff"
+      ><strong>Step 4: Delete the Todo Using the DELETE Request</strong></span
+    >
+  </h3>
+  <div
+    id="kl_panel_13_content"
+    class="kl_panel_content kl_panel_13"
+    style="font-size: 12pt"
+  >
+    <p>
+      Delete this Todo using its ID and using the DELETE request.<br /><code
+        ><span style="color: #000000">{</span></code
+      ><br /><code
+        ><span style="color: #000000">&nbsp; &nbsp; "code": 200,</span></code
+      ><br /><code
+        ><span style="color: #000000"
+          >&nbsp; &nbsp; "message": "Sucessfully deleted todo!"</span
+        ></code
+      ><br /><code><span style="color: #000000">}</span></code>
+    </p>
+  </div>
+</div>
